@@ -1,0 +1,29 @@
+{
+  "name": "readmegen",
+  "version": "1.0.0",
+  "description": "Generates a good Github readme file",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Redshreds/readmegen.git"
+  },
+  "author": "Redshreds",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Redshreds/readmegen/issues"
+  },
+  "homepage": "https://github.com/Redshreds/readmegen#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "inquirer": "^7.1.0",
+    "lodash": "^4.17.15",
+    "promisify": "0.0.3",
+    "util": "^0.12.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
