@@ -1,7 +1,7 @@
     # Readme Generator
     [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Redshreds/readme-generator)
     
-![]("https://imgur.com/a/cZIxL95")
+![GIF](https://imgur.com/a/cZIxL95)
     
     ## Description
     
