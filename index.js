@@ -4,8 +4,6 @@ const inquirer = require('inquirer');
 const lodash = require('lodash');
 const axios = require('axios');
 const util = require('util');
-const readme = require('./src/formatters.js')
-
 //Questions
 const questions = [{
         type: "input",
@@ -77,16 +75,6 @@ function generateReadmeTemplate(data) {
 
     return `
 
-    <style>
-    .color: red;
-
-    </style>
-
-    <div class="color">
-
-    </div>
-
-
     # ${data.title}
     ${licenseBadge}
     
@@ -135,8 +123,8 @@ function generateReadmeTemplate(data) {
     \`\`\`
     
     ## Questions
-    
-    <img src="${data.avatar_url}" alt="avatar" style="border-radius: 16px" width="30" />
+
+    ![GitHub Avatar](${data.avatar_url})
     
     If you have any questions about the repo, open an issue or contact [${data.github}](${data.url}) directly at ${data.email}.
 
@@ -168,16 +156,6 @@ function generatePDF(data) {
 
 
     return `
-
-    <style>
-    .color: red;
-
-    </style>
-
-    <div class="color">
-
-    </div>
-
 
     # ${data.title}
     ${licenseBadge}
@@ -260,14 +238,6 @@ async function init() {
                 return response.data;
             })
 
-        // console.log("githubData", gitData);
-
-        // get data written out into a readme...
-        //const site = readme.make(data, gitData);
-
-        // write data to file
-        //await writeFileAsync("read.md", site, "utf8");
-        //console.log("Succsessfully wrote file");
         let fullData = {
             ...userResponse,
             ...gitData
@@ -276,7 +246,7 @@ async function init() {
         writeToFile("GenReadMe.md", readmeTempData)
 
         let pdfTempData = generatePDF(fullData);
-        writeToFile("ReadMe.pdf", readmeTempData)
+        writeToFile("readme.pdf", pdfTempData);
 
     }
     // print error if anything happens along the way
