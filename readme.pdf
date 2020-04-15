@@ -1,11 +1,20 @@
 
+    <!DOCTYPE html>
+<html lang="en">
 
-    # ReadmeGen
-    [![GitHub license](https://img.shields.io/badge/license-APACHE 2.0-blue.svg)](https://github.com/Redshreds/readmegen)
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github Profile</title>
+</head>
+
+<body>
+    # as
+    [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Redshreds/as)
     
     ## Description
     
-    A generator for good readme files
+    as
     
     ## Table of Contents 
     
@@ -26,12 +35,12 @@
     To install necessary dependencies, run the following command:
     
     ```
-    npm i
+    as
     ```
     
     ## Usage
     
-    It's a WIP :)
+    
     
     ## License
 
@@ -39,7 +48,7 @@
       
     ## Contributing
     
-    Just me so far
+    
     
     ## Tests
     
@@ -54,6 +63,11 @@
     <img src="https://avatars0.githubusercontent.com/u/58519368?v=4" alt="avatar" style="border-radius: 16px" width="30" />
     
     If you have any questions about the repo, open an issue or contact [Redshreds](https://api.github.com/users/Redshreds) directly at null.
+</body>
+
+</html>
+
+
 
 
 

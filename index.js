@@ -156,7 +156,16 @@ function generatePDF(data) {
 
 
     return `
+    <!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github Profile</title>
+</head>
+
+<body>
     # ${data.title}
     ${licenseBadge}
     
@@ -209,6 +218,11 @@ function generatePDF(data) {
     <img src="${data.avatar_url}" alt="avatar" style="border-radius: 16px" width="30" />
     
     If you have any questions about the repo, open an issue or contact [${data.github}](${data.url}) directly at ${data.email}.
+</body>
+
+</html>
+
+
 
 
 
