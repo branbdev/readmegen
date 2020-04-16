@@ -4,6 +4,12 @@ const inquirer = require('inquirer');
 const lodash = require('lodash');
 const axios = require('axios');
 const util = require('util');
+
+var markdownpdf = require("markdown-pdf")
+
+//console.log("package is, ", markdownpdf)
+//process.exit()
+
 //Questions
 const questions = [{
         type: "input",
@@ -51,6 +57,8 @@ const questions = [{
 ];
 
 //Functions
+
+//MARKDOWN
 function writeToFile(fileName, data) {
     return fs.writeFileSync(path.join(fileName), data);
 }
@@ -75,160 +83,160 @@ function generateReadmeTemplate(data) {
 
     return `
 
-    # ${data.title}
-    ${licenseBadge}
-    
-    ## Description
-    
-    ${data.description}
-    
-    ## Table of Contents 
-    
-    * [Installation](#installation)
-    
-    * [Usage](#usage)
-    
-    * [License](#license)
-    
-    * [Contributing](#contributing)
-    
-    * [Tests](#tests)
-    
-    * [Questions](#questions)
-    
-    ## Installation
-    
-    To install necessary dependencies, run the following command:
-    
-    \`\`\`
-    ${data.installation}
-    \`\`\`
-    
-    ## Usage
-    
-    ${data.usage}
-    
-    ${license}
-      
-    ## Contributing
-    
-    ${data.contributing}
-    
-    ## Tests
-    
-    To run tests, run the following command:
-    
-    \`\`\`
-    ${data.test}
-    \`\`\`
-    
-    ## Questions
+# ${data.title}
+${licenseBadge}
 
-    ![GitHub Avatar](${data.avatar_url})
-    
-    If you have any questions about the repo, open an issue or contact [${data.github}](${data.url}) directly at ${data.email}.
+## Description
 
+${data.description}
 
+## Table of Contents 
 
+* [Installation](#installation)
 
-    `
-}
+* [Usage](#usage)
 
+* [License](#license)
 
+* [Contributing](#contributing)
 
+* [Tests](#tests)
 
-function generatePDF(data) {
+* [Questions](#questions)
 
-    const projectTitle = data.title.toLowerCase().split(" ").join("-");
-    let projectUrl = `https://github.com/${data.github}/${projectTitle}`;
-    let license = '';
-    let licenseBadge = '';
+## Installation
 
-    if (data.license !== "None") {
-        licenseBadge = `[![GitHub license](https://img.shields.io/badge/license-${data.license}-blue.svg)](${projectUrl})`;
-        license = `## License
+To install necessary dependencies, run the following command:
 
-    This project is licensed under the ${license} license.`
+\`\`\`
+${data.installation}
+\`\`\`
 
-    }
+## Usage
 
+${data.usage}
 
+${license}
+    
+## Contributing
 
+${data.contributing}
 
-    return `
-    <!DOCTYPE html>
-<html lang="en">
+## Tests
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Github Profile</title>
-</head>
+To run tests, run the following command:
 
-<body>
-    # ${data.title}
-    ${licenseBadge}
-    
-    ## Description
-    
-    ${data.description}
-    
-    ## Table of Contents 
-    
-    * [Installation](#installation)
-    
-    * [Usage](#usage)
-    
-    * [License](#license)
-    
-    * [Contributing](#contributing)
-    
-    * [Tests](#tests)
-    
-    * [Questions](#questions)
-    
-    ## Installation
-    
-    To install necessary dependencies, run the following command:
-    
-    \`\`\`
-    ${data.installation}
-    \`\`\`
-    
-    ## Usage
-    
-    ${data.usage}
-    
-    ${license}
-      
-    ## Contributing
-    
-    ${data.contributing}
-    
-    ## Tests
-    
-    To run tests, run the following command:
-    
-    \`\`\`
-    ${data.test}
-    \`\`\`
-    
-    ## Questions
-    
-    <img src="${data.avatar_url}" alt="avatar" style="border-radius: 16px" width="30" />
-    
-    If you have any questions about the repo, open an issue or contact [${data.github}](${data.url}) directly at ${data.email}.
-</body>
+\`\`\`
+${data.test}
+\`\`\`
 
-</html>
+## Questions
 
+![GitHub Avatar](${data.avatar_url})
 
+If you have any questions about the repo, open an issue or contact [${data.github}](${data.url}) directly at ${data.email}.
 
 
 
 
     `
 }
+
+//PDF
+
+
+// function generatePDF(data) {
+
+//     const projectTitle = data.title.toLowerCase().split(" ").join("-");
+//     let projectUrl = `https://github.com/${data.github}/${projectTitle}`;
+//     let license = '';
+//     let licenseBadge = '';
+
+//     if (data.license !== "None") {
+//         licenseBadge = `[![GitHub license](https://img.shields.io/badge/license-${data.license}-blue.svg)](${projectUrl})`;
+//         license = `## License
+
+//     This project is licensed under the ${license} license.`
+
+//     }
+
+
+
+
+//     return `
+//     <!DOCTYPE html>
+// <html lang="en">
+
+// <head>
+//     <meta charset="UTF-8">
+//     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+//     <title>Github Profile</title>
+// </head>
+
+// <body>
+//     # ${data.title}
+//     ${licenseBadge}
+
+//     ## Description
+
+//     ${data.description}
+
+//     ## Table of Contents 
+
+//     * [Installation](#installation)
+
+//     * [Usage](#usage)
+
+//     * [License](#license)
+
+//     * [Contributing](#contributing)
+
+//     * [Tests](#tests)
+
+//     * [Questions](#questions)
+
+//     ## Installation
+
+//     To install necessary dependencies, run the following command:
+
+//     \`\`\`
+//     ${data.installation}
+//     \`\`\`
+
+//     ## Usage
+
+//     ${data.usage}
+
+//     ${license}
+
+//     ## Contributing
+
+//     ${data.contributing}
+
+//     ## Tests
+
+//     To run tests, run the following command:
+
+//     \`\`\`
+//     ${data.test}
+//     \`\`\`
+
+//     ## Questions
+
+//     <img src="${data.avatar_url}" alt="avatar" style="border-radius: 16px" width="30" />
+
+//     If you have any questions about the repo, open an issue or contact [${data.github}](${data.url}) directly at ${data.email}.
+// </body>
+
+// </html>
+
+
+
+
+
+
+//     `
+// }
 
 function promptUser() {
     // get github username
@@ -259,8 +267,12 @@ async function init() {
         let readmeTempData = generateReadmeTemplate(fullData);
         writeToFile("GenReadMe.md", readmeTempData)
 
-        let pdfTempData = generatePDF(fullData);
-        writeToFile("readme.pdf", pdfTempData);
+        //let pdfTempData = generatePDF(fullData);
+        //writeToFile("readme.pdf", pdfTempData);
+
+        markdownpdf().from("./GenReadMe.md").to("./document.pdf", function () {
+            console.log("Done")
+        })
 
     }
     // print error if anything happens along the way
