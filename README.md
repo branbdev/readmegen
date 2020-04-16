@@ -1,7 +1,7 @@
 # Readme Generator
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Redshreds/readme-generator)
 
-![GIF](http://imgur.com/a/cZIxL95)
+![GIF](https://imgur.com/a/cZIxL95)
 
 ## Description
 
@@ -53,5 +53,5 @@ npm test
 
 ![GitHub Avatar](https://avatars0.githubusercontent.com/u/58519368?v=4)
 
-If you have any questions about the repo, open an issue or contact [Redshreds](https://api.github.com/users/Redshreds) directly at null.
+If you have any questions about the repo, open an issue or contact [Redshreds](https://api.github.com/users/Redshreds) directly at brandonbowen999@gmail.com.
 
