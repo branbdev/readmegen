@@ -2,7 +2,7 @@
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Redshreds/readme-generator)
 
-![GIF](assets\readme.gif)
+![GIF](https://github.com/Redshreds/readmegen/blob/master/assets/readme.gif)
 
 ## Description
 
